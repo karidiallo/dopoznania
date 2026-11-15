@@ -136,6 +136,26 @@
   panelBackdrop.addEventListener('click',e=>{if(e.target===panelBackdrop)closePanel();});
   window.addEventListener('load',()=>{ const hash=decodeURIComponent(location.hash.slice(1));if(hash && document.getElementById(hash))setTimeout(()=>document.getElementById(hash).scrollIntoView({block:'start',behavior:'instant'}),60); });
 
+  // Preselect an event from the event card or the shareable URL.
+  const eventSelect = $('#eventSelect');
+  const applyEvent = (id) => {
+    if (!eventSelect) return;
+    const match = Array.from(eventSelect.options).find(option => option.dataset.event === id);
+    if (match) eventSelect.value = match.value;
+  };
+  applyEvent(new URLSearchParams(location.search).get('event'));
+  $$('[data-event][href]').forEach(link => link.addEventListener('click', event => {
+    const id = link.dataset.event;
+    if (!id || !eventSelect) return;
+    event.preventDefault();
+    applyEvent(id);
+    const url = new URL(location.href);
+    url.searchParams.set('event', id);
+    url.hash = 'zapisz-sie';
+    history.replaceState(null, '', url.pathname + url.search + url.hash);
+    scrollToChapter('zapisz-sie');
+  }));
+
   // Formspree: AJAX submission keeps the guest on the journey and shows
   // a branded confirmation only after Formspree returns an actual success.
   const registrationForm = $('#registrationForm');
