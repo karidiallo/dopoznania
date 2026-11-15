@@ -254,3 +254,11 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 .consent a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:1100px){.chapter--hero .hero__inner{grid-template-columns:1fr!important;gap:24px!important}.chapter--hero .hero-film{max-width:650px!important}.chapter--workshops .events-layout{grid-template-columns:1fr!important}.chapter--workshops .events-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){.chapter--hero .hero-film{max-width:100%!important}.chapter--workshops .events-gallery{grid-template-columns:1fr!important}.chapter--workshops .chapter__card{max-width:100%!important}}
+
+/* V13.1 — avoid oversized heading crossing event card */
+.chapter--workshops .events-intro.chapter__card{min-width:0!important;overflow:hidden!important;isolation:isolate;}
+.chapter--workshops .events-intro #h-workshops{font-family:var(--sans);font-size:clamp(44px,4.3vw,76px)!important;line-height:1.04!important;letter-spacing:-.055em!important;max-width:100%!important;overflow-wrap:normal;word-break:normal;}
+.chapter--workshops .events-intro .eyebrow{font-size:10px;letter-spacing:.12em;}
+.chapter--workshops .events-intro .chapter__body{max-width:100%;}
+@media(max-width:1100px){.chapter--workshops .events-intro #h-workshops{font-size:clamp(42px,6.2vw,68px)!important;}}
+@media(max-width:600px){.chapter--workshops .events-intro #h-workshops{font-size:clamp(42px,12vw,62px)!important;}}
