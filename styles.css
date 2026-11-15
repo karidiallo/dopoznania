@@ -238,3 +238,19 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 .site-footer .footer-bottom a{font-size:11px;color:#fff}
 @media(max-width:900px){.chapter--hero .hero__inner{gap:20px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}.chapter--hero .chapter__card h1{font-size:clamp(35px,5.4vw,55px)}.site-footer .footer-main{align-items:start}}
 @media(max-width:650px){.chapter--hero .hero__inner{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:19px;min-height:75svh;width:100%}.chapter--hero .chapter__card{width:100%;max-width:calc(100vw - 85px);padding:23px 24px;align-self:flex-start}.chapter--hero .chapter__card h1{font-size:clamp(38px,10vw,54px)}.chapter--hero .hero-film{width:min(68vw,290px);max-width:none;align-self:flex-end;margin:0 14px 0 0}.hero-film__visual{aspect-ratio:16/9;border-radius:13px}.hero-film__meta{font-size:8px}.site-footer{padding-top:38px}.site-footer .footer-main{display:grid;gap:28px}.site-footer .footer-links{justify-content:flex-start;gap:14px 22px}.site-footer .footer-bottom{flex-direction:column}}
+
+/* V13 refined hero / glass and event composition */
+.chapter--hero .hero__inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.16fr)!important;align-items:center!important;gap:clamp(24px,3vw,56px)!important;max-width:1480px!important;width:100%!important;padding:0!important;}
+.chapter--hero .chapter__card{width:100%!important;max-width:none!important;min-width:0!important;overflow:visible!important;box-sizing:border-box;backdrop-filter:blur(26px) saturate(110%)!important;}
+.chapter--hero .hero-film{width:100%!important;min-width:0!important;max-width:none!important;justify-self:stretch!important;}
+.chapter--hero .hero-film__visual{width:100%!important;aspect-ratio:16/9!important;max-height:none!important;}
+.chapter--hero .hero-film video{object-fit:cover!important;width:100%!important;height:100%!important;}
+.events-intro.chapter__card{max-width:none!important;width:100%!important;min-width:0!important;box-sizing:border-box;overflow:visible!important;}
+.chapter--workshops .events-layout{grid-template-columns:minmax(0,.83fr) minmax(0,2fr)!important;gap:clamp(20px,2.5vw,52px)!important;max-width:1700px!important;width:100%!important;}
+.chapter--workshops .events-gallery{min-width:0!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+.chapter--workshops .event-tile{min-width:0!important;}
+.chapter--workshops .event-tile__poster{display:block;overflow:hidden;}
+.chapter--workshops .event-tile__poster img{max-width:100%;object-fit:contain!important;}
+.consent a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1100px){.chapter--hero .hero__inner{grid-template-columns:1fr!important;gap:24px!important}.chapter--hero .hero-film{max-width:650px!important}.chapter--workshops .events-layout{grid-template-columns:1fr!important}.chapter--workshops .events-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){.chapter--hero .hero-film{max-width:100%!important}.chapter--workshops .events-gallery{grid-template-columns:1fr!important}.chapter--workshops .chapter__card{max-width:100%!important}}
