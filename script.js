@@ -99,7 +99,7 @@
       lastMotionTime = now;
       if (!mediaActive && video.readyState >= 2) startVideo();
     }
-    const washes = [.28,.30,.28,.28,.30,.29,.27];
+    const washes = [.28,.28,.28,.30,.29,.27];
     journey.style.setProperty('--wash', String(washes[chapterIndex]));
   }
   function scheduleUpdate(){ if (!frameRequested) { frameRequested = true; requestAnimationFrame(update); } }
@@ -135,5 +135,40 @@
   $('#closePanel').addEventListener('click',closePanel);
   panelBackdrop.addEventListener('click',e=>{if(e.target===panelBackdrop)closePanel();});
   window.addEventListener('load',()=>{ const hash=decodeURIComponent(location.hash.slice(1));if(hash && document.getElementById(hash))setTimeout(()=>document.getElementById(hash).scrollIntoView({block:'start',behavior:'instant'}),60); });
+
+  // Formspree: AJAX submission keeps the guest on the journey and shows
+  // a branded confirmation only after Formspree returns an actual success.
+  const registrationForm = $('#registrationForm');
+  if (registrationForm) {
+    registrationForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submit = $('#registrationSubmit');
+      const error = $('#formError');
+      const success = $('#formSuccess');
+      error.hidden = true;
+      submit.disabled = true;
+      const buttonLabel = submit.querySelector('span');
+      const originalLabel = buttonLabel.textContent;
+      buttonLabel.textContent = 'WYSYŁANIE…';
+      try {
+        const response = await fetch(registrationForm.action, {
+          method: 'POST',
+          body: new FormData(registrationForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Formspree returned ' + response.status);
+        registrationForm.hidden = true;
+        const formTop = document.querySelector('.form-top');
+        if (formTop) formTop.hidden = true;
+        success.hidden = false;
+        success.setAttribute('tabindex', '-1');
+        success.focus();
+      } catch (err) {
+        error.hidden = false;
+        buttonLabel.textContent = originalLabel;
+        submit.disabled = false;
+      }
+    });
+  }
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closePanel();}});
 })();
