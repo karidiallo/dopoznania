@@ -216,3 +216,25 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 @media(max-width:960px){.chapter--hero .hero__inner{gap:20px}.hero-film{width:clamp(170px,24vw,250px);margin-right:0}.registration-event-preview{width:min(260px,100%)}.registration-event-preview__image{height:220px}}
 @media(max-width:650px){.chapter--hero .hero__inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;min-height:80svh}.chapter--hero .chapter__card{flex:0 0 auto;width:100%}.hero-film{align-self:flex-end;width:min(36vw,156px);margin-right:16px;margin-top:0;transform:rotate(2deg)}.hero-film__visual{aspect-ratio:4/4.6;border-radius:13px}.hero-film__meta{font-size:7px;flex-direction:column;gap:4px}.hero-film__play{width:28px;height:28px;bottom:8px;right:8px;font-size:15px}.registration-event-preview{margin-top:18px;display:flex;gap:15px;align-items:center;width:100%}.registration-event-preview[hidden]{display:none}.registration-event-preview__image{width:110px;height:142px;flex-shrink:0}.registration-event-preview__meta{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-top:0}}
 @media(prefers-reduced-motion:reduce){.hero-film video{display:none}.hero-film__visual{background:#111 url('./assets/vol-i-film-cover.jpg') center/cover no-repeat}}
+
+/* V12: aligned hero, landscape film, full shared footer */
+.chapter--hero .hero__inner{width:min(100%,1180px);max-width:1180px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4.5vw,76px);align-items:center;justify-content:center;margin-inline:auto;min-height:70svh}
+.chapter--hero .chapter__card{width:100%;min-width:0;max-width:520px;flex:none;overflow:visible;justify-self:start;box-sizing:border-box;padding:clamp(27px,3vw,44px);border-radius:24px;}
+.chapter--hero .chapter__card h1{font-size:clamp(42px,4.3vw,66px);letter-spacing:-.055em;overflow-wrap:normal;white-space:normal;}
+.chapter--hero .hero-film{width:100%;max-width:480px;margin:0;justify-self:center;align-self:center;transform:rotate(1deg);min-width:0}
+.chapter--hero .hero-film:hover{transform:rotate(0deg) translateY(-5px)}
+.hero-film__visual{aspect-ratio:16/9;border-radius:19px;background:#151515;}
+.hero-film video{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-film__meta{font-size:10px;padding-top:13px}
+.site-footer{position:relative;background:#101010;color:#f8f8f6;padding:55px clamp(20px,5vw,80px) 27px;display:block;min-height:0;}
+.site-footer .footer-main{display:flex;justify-content:space-between;align-items:center;gap:35px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.22);flex-wrap:wrap}
+.site-footer .footer-brand{display:block;width:168px;background:transparent;padding:0;flex-shrink:0}
+.site-footer .footer-brand img{width:100%;height:auto;display:block;object-fit:contain}
+.site-footer .footer-links{display:flex;flex-wrap:wrap;gap:16px 27px;align-items:center;justify-content:flex-end}
+.site-footer .footer-links a,.site-footer .footer-legal a,.site-footer .footer-bottom a{font-size:12px;letter-spacing:.015em;font-weight:550;color:#e8e8e6;text-decoration:none;transition:opacity .2s}
+.site-footer a:hover{opacity:.65}
+.site-footer .footer-legal{display:flex;gap:28px;padding:27px 0;flex-wrap:wrap}
+.site-footer .footer-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:23px;display:flex;justify-content:space-between;gap:16px 30px;flex-wrap:wrap;color:#aaa;font-size:11px;line-height:1.6}
+.site-footer .footer-bottom a{font-size:11px;color:#fff}
+@media(max-width:900px){.chapter--hero .hero__inner{gap:20px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}.chapter--hero .chapter__card h1{font-size:clamp(35px,5.4vw,55px)}.site-footer .footer-main{align-items:start}}
+@media(max-width:650px){.chapter--hero .hero__inner{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:19px;min-height:75svh;width:100%}.chapter--hero .chapter__card{width:100%;max-width:calc(100vw - 85px);padding:23px 24px;align-self:flex-start}.chapter--hero .chapter__card h1{font-size:clamp(38px,10vw,54px)}.chapter--hero .hero-film{width:min(68vw,290px);max-width:none;align-self:flex-end;margin:0 14px 0 0}.hero-film__visual{aspect-ratio:16/9;border-radius:13px}.hero-film__meta{font-size:8px}.site-footer{padding-top:38px}.site-footer .footer-main{display:grid;gap:28px}.site-footer .footer-links{justify-content:flex-start;gap:14px 22px}.site-footer .footer-bottom{flex-direction:column}}
