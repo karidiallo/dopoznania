@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#f9f8f5" name="theme-color"/>
+<meta content="do Poznania — niezależny projekt kreatywny i warsztaty taneczne w Poznaniu." name="description"/>
+<title>do Poznania — warsztaty taneczne</title>
+<link as="image" href="./assets/road-poster.jpg" rel="preload"/>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="loading" id="loading"><span class="loading__logo"><img alt="do Poznania — logo" class="logo-art" src="./assets/original-logo-extracted.png"/></span><span class="loading__sub">DO POZNANIA</span><span class="loading__line"><i></i></span></div>
+<header class="header" id="header"><a aria-label="do Poznania — strona główna" class="brand" href="#start"><img alt="do Poznania" class="logo-art" src="./assets/original-logo-extracted.png"/></a><nav aria-label="Nawigacja główna" class="header__nav"><a href="#start">HOME</a><a href="#idea">O PROJEKCIE</a><a href="#upcoming">WARSZTATY</a><a href="./archiwum.html">ARCHIWUM</a><a href="#contact">KONTAKT</a></nav><div class="header__right"><a class="header__cta" href="#zapisz-sie"><span>Zapisz się</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><button aria-controls="menuOverlay" aria-expanded="false" aria-label="Otwórz menu" class="menu-btn" id="menuBtn"><i></i><i></i><span>MENU</span></button></div></header>
+<aside aria-label="Postęp podróży" class="rail"><div class="rail__caption">SCROLL TO EXPLORE THE JOURNEY</div><div class="rail__track"><span id="railFill"></span></div><div class="rail__percent" id="railPercent">00%</div></aside>
+<main>
+<div class="journey" id="journey">
+<div aria-hidden="true" class="stage"><div class="stage__media" id="stageMedia"><video disablepictureinpicture="" id="roadVideo" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" poster="./assets/road-poster.jpg" preload="auto"><source src="./assets/road-scroll.mp4" type="video/mp4"/></video><div class="stage__fallback"></div></div><div class="stage__wash"></div><div class="stage__grain"></div><div class="stage__topshade"></div><div class="stage__bottomshade"></div></div>
+<section aria-labelledby="h-start" class="chapter chapter--hero" data-chapter="0" id="start"><div class="chapter__inner hero__inner"><div class="chapter__card"><span class="eyebrow">WARSZTATY TANECZNE · POZNAŃ</span><h1 id="h-start">do Poznania</h1><p class="chapter__body">Niezależny projekt kreatywny · warsztaty taneczne</p><a class="chapter__link" href="#idea">O projekcie <span aria-hidden="true">↗</span></a></div></div></section>
+<section aria-labelledby="h-idea" class="chapter chapter--idea" data-chapter="1" id="idea"><div class="chapter__inner split left"><div class="chapter__card"><span class="eyebrow">IDEA</span><h2 id="h-idea">O projekcie</h2><p class="chapter__body">Historia, idea i filozofia do Poznania.</p><button class="chapter__link" data-panel="about">Więcej o projekcie<span aria-hidden="true">↗</span></button></div></div></section>
+<section aria-labelledby="h-workshops" class="chapter chapter--workshops" data-chapter="2" id="upcoming"><div class="chapter__inner split right"><div class="chapter__card"><span class="eyebrow">UPCOMING</span><h2 id="h-workshops">Warsztaty</h2><p class="chapter__body">Nadchodząca edycja · program, instruktorzy i zapisy.</p><a class="chapter__link" href="#zapisz-sie">Przejdź do zapisów<span aria-hidden="true">↗</span></a></div></div></section>
+<section aria-labelledby="h-community" class="chapter chapter--community" data-chapter="3" id="community"><div class="chapter__inner split left"><div class="chapter__card"><span class="eyebrow">COMMUNITY</span><h2 id="h-community">Community</h2><p class="chapter__body">Zdjęcia, filmy i ludzie, którzy tworzą to wydarzenie.</p><a class="chapter__link" href="./archiwum.html">Zobacz archiwum<span aria-hidden="true">↗</span></a></div></div></section>
+<section aria-labelledby="h-archive" class="chapter chapter--archive" data-chapter="4" id="archive"><div class="chapter__inner split right"><div class="chapter__card"><span class="eyebrow">ARCHIVE</span><h2 id="h-archive">Archiwum</h2><p class="chapter__body">Wspomnienia i materiały z poprzednich edycji.</p><a class="chapter__link" href="./archiwum.html">Otwórz archiwum<span aria-hidden="true">↗</span></a></div><div aria-hidden="true" class="chapter__media-tag"><span class="media-marker">↗</span> MATERIAŁY Z POPRZEDNICH EDYCJI</div></div></section>
+<section aria-labelledby="h-destination" class="chapter chapter--destination" data-chapter="5" id="contact"><div class="chapter__inner finish"><div class="chapter__card"><span class="eyebrow">05 / KONTAKT</span><h2 id="h-destination">Kontakt</h2><p class="chapter__body">Masz pytania dotyczące warsztatów lub współpracy?</p><a class="chapter__link" href="#zapisz-sie">Zapisy na warsztaty <span aria-hidden="true">↗</span></a></div></div></section>
+<section aria-labelledby="registration-title" class="chapter chapter--registration" data-chapter="6" id="zapisz-sie">
+<div class="registration-layout">
+<div class="registration-intro"><span class="eyebrow">ZAPISY NA WYDARZENIE</span><h2 id="registration-title">Zapisz się</h2><p>Wyślij zgłoszenie zainteresowania kolejną edycją warsztatów.</p><span class="registration-note">Szczegóły wydarzenia zostaną uzupełnione przez organizatorów.</span></div>
+<div class="registration-glass">
+<div class="form-top"><span>DO POZNANIA / ZGŁOSZENIE</span><span>01 — 04</span></div>
+<form action="/dziekujemy.html" data-netlify="true" method="POST" name="zapisy" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="zapisy"/>
+<p hidden=""><label>Nie wypełniaj tego pola <input name="bot-field"/></label></p>
+<div class="form-grid"><label class="field"><span>IMIĘ I NAZWISKO *</span><input autocomplete="name" maxlength="100" name="name" placeholder="Twoje imię i nazwisko" required="" type="text"/></label><label class="field"><span>ADRES E-MAIL *</span><input autocomplete="email" maxlength="200" name="email" placeholder="twoj@email.com" required="" type="email"/></label></div>
+<label class="field"><span>WIADOMOŚĆ <small>(OPCJONALNIE)</small></span><textarea maxlength="1200" name="message" placeholder="Pytania lub dodatkowe informacje" rows="3"></textarea></label>
+<label class="consent"><input name="contact-consent" required="" type="checkbox" value="yes"/><span>Zgadzam się na kontakt w sprawie mojego zgłoszenia. *</span></label>
+<button class="submit-cta" type="submit"><span>WYŚLIJ ZGŁOSZENIE</span><span aria-hidden="true">↗</span></button>
+<p class="form-disclaimer">Prototyp formularza. Przed publikacją organizator musi uzupełnić informacje o przetwarzaniu danych i uruchomić obsługę zgłoszeń.</p>
+</form>
+</div>
+</div>
+</section></div>
+</main>
+<footer><a class="footer-brand" href="#start"><img alt="do Poznania" class="logo-art" src="./assets/logo-white-footer.png"/></a><span>POZNAŃ · WARSZTATY TANECZNE</span><a href="#zapisz-sie">ZAPISY ↗</a><span>© 2026 / PROTOTYP</span></footer>
+<div aria-hidden="true" class="overlay" id="menuOverlay"><div class="overlay__header"><span>MENU</span><button aria-label="Zamknij menu" class="overlay__close" id="closeMenu">✕</button></div><nav aria-label="Menu główne"><a href="#start"><small>01</small>HOME<span>↗</span></a><a href="#idea"><small>02</small>O PROJEKCIE<span>↗</span></a><a href="#upcoming"><small>03</small>WARSZTATY<span>↗</span></a><a href="./archiwum.html"><small>04</small>ARCHIWUM<span>↗</span></a><a href="#contact"><small>05</small>KONTAKT<span>↗</span></a><a href="#zapisz-sie"><small>06</small>ZAPISZ SIĘ<span>↗</span></a></nav></div>
+<div aria-hidden="true" class="panel-backdrop" id="panelBackdrop"><article aria-labelledby="panelTitle" aria-modal="true" class="panel" role="dialog"><div class="panel__top"><span>do Poznania</span><button aria-label="Zamknij panel" id="closePanel">✕ ZAMKNIJ</button></div><div class="panel__content" id="panelContent"></div><div class="panel__bottom">do Poznania</div></article></div>
+<noscript><p style="position:fixed;z-index:999;bottom:0;background:white;padding:18px;width:100%;font:14px Arial">Aby skorzystać z animowanej podróży, włącz JavaScript.</p></noscript>
+<script src="./script.js"></script>
+</body>
+</html>
