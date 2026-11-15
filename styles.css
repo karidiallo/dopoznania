@@ -194,3 +194,25 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 .form-grid--details .field input{padding:13px 0}
 @media(max-width:1100px){.chapter--workshops .events-layout{grid-template-columns:1fr;gap:22px}.chapter--workshops .events-intro{max-width:440px;padding:22px 26px}.chapter--workshops .events-intro h2{font-size:clamp(37px,5vw,52px)}.events-gallery{max-width:680px;width:100%}.event-tile__poster{height:clamp(190px,32svh,350px)}.chapter--workshops{height:auto;min-height:105svh;padding-top:115px;padding-bottom:85px}}
 @media(max-width:650px){.chapter--workshops .events-layout{display:flex;flex-direction:column;align-items:stretch;gap:14px}.chapter--workshops .events-intro{max-width:100%;width:100%}.chapter--workshops .events-intro .chapter__body{margin-bottom:0}.events-gallery{gap:10px;align-items:stretch}.event-tile{border-radius:14px}.event-tile__poster{height:clamp(190px,30svh,310px)}.event-tile__info{padding:11px 10px;flex-wrap:wrap}.event-tile__info strong{font-size:17px}.event-tile__info a{font-size:10px}.chapter--archive .journey-film-link{width:38vw;bottom:2%;left:27%}.journey-film-play{width:36px;height:36px}.chapter--workshops{min-height:100svh;padding:100px 38px 60px 6%}}
+
+
+/* V11: cinematic hero excerpt, photo-only archive teaser, event-linked poster */
+.chapter--hero .hero__inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(32px,7vw,130px);max-width:1260px;min-height:65svh}
+.chapter--hero .chapter__card{flex:0 1 515px;min-width:0;max-width:515px;z-index:4}
+.hero-film{display:block;flex:0 0 auto;width:clamp(210px,23vw,330px);position:relative;z-index:4;transform:rotate(2deg);transition:transform .35s ease;align-self:center;margin-right:clamp(4px,3vw,36px);color:#111}
+.hero-film:hover{transform:rotate(0deg) translateY(-7px)}
+.hero-film__visual{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:20px;background:#141414;box-shadow:0 22px 70px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.86)}
+.hero-film video{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1);pointer-events:none}
+.hero-film__play{position:absolute;bottom:15px;right:15px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);display:grid;place-items:center;font-size:19px}
+.hero-film__meta{display:flex;justify-content:space-between;gap:12px;padding:12px 4px 0;font-size:9px;font-weight:750;letter-spacing:.07em}
+.chapter--archive .journey-photo-cluster{z-index:2}
+.registration-event-preview{margin-top:23px;width:min(250px,100%);animation:posterReveal .35s ease both}
+.registration-event-preview__image{position:relative;width:100%;height:clamp(185px,30svh,295px);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 45px rgba(0,0,0,.11)}
+.registration-event-preview__image img{width:100%;height:100%;object-fit:contain;display:block}
+.registration-event-preview__meta{margin-top:11px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.registration-event-preview__meta span{font-size:9px;letter-spacing:.09em;font-weight:650}
+.registration-event-preview__meta strong{font-size:12px;font-weight:750}
+@keyframes posterReveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:960px){.chapter--hero .hero__inner{gap:20px}.hero-film{width:clamp(170px,24vw,250px);margin-right:0}.registration-event-preview{width:min(260px,100%)}.registration-event-preview__image{height:220px}}
+@media(max-width:650px){.chapter--hero .hero__inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;min-height:80svh}.chapter--hero .chapter__card{flex:0 0 auto;width:100%}.hero-film{align-self:flex-end;width:min(36vw,156px);margin-right:16px;margin-top:0;transform:rotate(2deg)}.hero-film__visual{aspect-ratio:4/4.6;border-radius:13px}.hero-film__meta{font-size:7px;flex-direction:column;gap:4px}.hero-film__play{width:28px;height:28px;bottom:8px;right:8px;font-size:15px}.registration-event-preview{margin-top:18px;display:flex;gap:15px;align-items:center;width:100%}.registration-event-preview[hidden]{display:none}.registration-event-preview__image{width:110px;height:142px;flex-shrink:0}.registration-event-preview__meta{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-top:0}}
+@media(prefers-reduced-motion:reduce){.hero-film video{display:none}.hero-film__visual{background:#111 url('./assets/vol-i-film-cover.jpg') center/cover no-repeat}}
