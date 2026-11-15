@@ -211,3 +211,25 @@
   }
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closePanel();}});
 })();
+
+/* V12: hero clip playback begins after the opening branding. */
+(() => {
+  const video = document.getElementById('heroDanceVideo');
+  if (!video) return;
+  let clipStart = 10;
+  const applyStart = () => {
+    if (Number.isFinite(video.duration) && video.duration > 1) {
+      clipStart = Math.min(video.duration * .47, Math.max(.1, video.duration - 3));
+      if (video.currentTime < clipStart - .2) video.currentTime = clipStart;
+    }
+  };
+  video.addEventListener('loadedmetadata', applyStart);
+  video.addEventListener('timeupdate', () => {
+    if (video.duration && video.currentTime >= video.duration - .15) {
+      video.currentTime = clipStart;
+      video.play().catch(() => {});
+    }
+  });
+  if (video.readyState >= 1) applyStart();
+  video.play().catch(() => {});
+})();
