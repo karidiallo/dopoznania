@@ -3,10 +3,11 @@ window.DO_POZNANIA_ARCHIVE = [
   {
     "id": "vol-i",
     "title": "do Poznania vol. I",
-    "subtitle": "Pierwsza edycja · fotografie",
+    "subtitle": "Pierwsza edycja · zdjęcia i wideo",
     "year": "",
     "cover": "assets/warsztaty/fullsizerender-thumb.webp",
     "media": [
+      {"type":"video","src":"assets/vol-i-dance-film.mp4","poster":"assets/vol-i-film-cover.jpg","title":"do Poznania vol. I · film z zajęć"},
       {
         "type": "photo",
         "src": "assets/warsztaty/fullsizerender-1-full.webp",
