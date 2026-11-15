@@ -166,3 +166,31 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 [hidden]{display:none!important}
 @media(max-width:920px){.chapter--workshops .chapter__inner{gap:20px}.upcoming-poster{width:clamp(150px,28vw,260px)}}
 @media(max-width:650px){.chapter--workshops .chapter__inner{flex-direction:column;align-items:flex-start;justify-content:center;gap:10px}.chapter--workshops .chapter__card{flex:0 0 auto;max-width:calc(100vw - 65px);padding:23px}.upcoming-poster{width:clamp(130px,38vw,185px);max-height:35svh;align-self:flex-end;margin-right:8%;margin-top:-12px}.upcoming-poster img{max-height:35svh}.registration-intro--glass{padding:25px}.registration-intro--glass h2{font-size:clamp(38px,9vw,54px)}}
+
+/* V10 — paired event cards, genuine film preview, and glass event selector */
+.chapter--workshops .events-layout{width:100%;display:grid;grid-template-columns:minmax(210px,.85fr) minmax(0,1.55fr);align-items:center;gap:clamp(18px,3vw,52px);margin:auto}
+.chapter--workshops .events-intro{min-width:0;width:100%;max-width:390px;align-self:center;flex:none}
+.events-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.8vw,25px);min-width:0;align-items:center}
+.event-tile{margin:0;min-width:0;background:rgba(255,255,255,.53);border:1px solid rgba(255,255,255,.78);border-radius:20px;overflow:hidden;box-shadow:0 18px 54px rgba(0,0,0,.11);backdrop-filter:blur(20px) saturate(115%);-webkit-backdrop-filter:blur(20px) saturate(115%);transition:transform .3s,box-shadow .3s}
+.event-tile:hover{transform:translateY(-6px);box-shadow:0 26px 65px rgba(0,0,0,.15)}
+.event-tile__poster{display:block;height:clamp(220px,43svh,430px);background:#f8f7f5;overflow:hidden}
+.event-tile__poster img{height:100%;width:100%;display:block;object-fit:contain;object-position:center}
+.event-tile__info{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;gap:10px}
+.event-tile__info>div{display:flex;flex-direction:column;gap:5px}
+.event-tile__info>div span{font-size:9px;letter-spacing:.1em;font-weight:720}
+.event-tile__info strong{font-size:20px;line-height:1;font-weight:740;letter-spacing:-.04em}
+.event-tile__info a{font-size:11px;font-weight:720;white-space:nowrap;display:inline-flex;gap:9px;align-items:center;border-bottom:1px solid currentColor;padding-bottom:4px}
+.journey-film-link{position:absolute;z-index:4;display:block;width:clamp(130px,17vw,240px);aspect-ratio:16/10;overflow:hidden;border:1px solid rgba(255,255,255,.85);box-shadow:0 22px 58px rgba(0,0,0,.19);border-radius:15px;bottom:-3%;left:17%;transition:transform .3s;background:#111}
+.journey-film-link:hover{transform:translateY(-5px)}
+.journey-film-link img{width:100%;height:100%;object-fit:cover;display:block}
+.journey-film-play{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);color:#111;display:grid;place-items:center;width:45px;height:45px;border-radius:50%;font-size:13px;padding-left:2px;backdrop-filter:blur(14px)}
+.journey-film-caption{position:absolute;bottom:10px;left:12px;color:white;text-shadow:0 1px 6px #111;font-size:9px;font-weight:760;letter-spacing:.11em}
+.field--event{margin:0 0 24px}
+.select-shell{position:relative;display:block;width:100%}
+.select-shell select{width:100%;min-height:53px;appearance:none;-webkit-appearance:none;color:#171717;background:rgba(255,255,255,.56);border:1px solid rgba(255,255,255,.9);outline:none;border-radius:12px;padding:14px 44px 14px 16px;font:550 14px var(--sans);box-shadow:inset 0 1px rgba(255,255,255,.9),0 5px 20px rgba(0,0,0,.05);backdrop-filter:blur(16px)}
+.select-shell select:focus-visible{outline:2px solid #171717;outline-offset:3px}
+.select-chevron{position:absolute;right:18px;top:50%;transform:translateY(-55%);pointer-events:none;font-size:22px}
+.form-grid--details{margin-top:2px}
+.form-grid--details .field input{padding:13px 0}
+@media(max-width:1100px){.chapter--workshops .events-layout{grid-template-columns:1fr;gap:22px}.chapter--workshops .events-intro{max-width:440px;padding:22px 26px}.chapter--workshops .events-intro h2{font-size:clamp(37px,5vw,52px)}.events-gallery{max-width:680px;width:100%}.event-tile__poster{height:clamp(190px,32svh,350px)}.chapter--workshops{height:auto;min-height:105svh;padding-top:115px;padding-bottom:85px}}
+@media(max-width:650px){.chapter--workshops .events-layout{display:flex;flex-direction:column;align-items:stretch;gap:14px}.chapter--workshops .events-intro{max-width:100%;width:100%}.chapter--workshops .events-intro .chapter__body{margin-bottom:0}.events-gallery{gap:10px;align-items:stretch}.event-tile{border-radius:14px}.event-tile__poster{height:clamp(190px,30svh,310px)}.event-tile__info{padding:11px 10px;flex-wrap:wrap}.event-tile__info strong{font-size:17px}.event-tile__info a{font-size:10px}.chapter--archive .journey-film-link{width:38vw;bottom:2%;left:27%}.journey-film-play{width:36px;height:36px}.chapter--workshops{min-height:100svh;padding:100px 38px 60px 6%}}
