@@ -138,11 +138,30 @@
 
   // Preselect an event from the event card or the shareable URL.
   const eventSelect = $('#eventSelect');
+  const eventPosters = {
+    'workshops-16-01': {src:'./assets/poster-warsztaty-16-01.jpg', title:'Warsztaty · 16.01'},
+    'open-class-06-12': {src:'./assets/poster-open-class-06-12.jpg', title:'Open Class · 6.12'}
+  };
+  const updateEventPreview = () => {
+    const preview = $('#registrationEventPreview');
+    const poster = $('#registrationEventPoster');
+    const name = $('#registrationEventName');
+    if (!preview || !eventSelect || !poster || !name) return;
+    const selected = eventSelect.selectedOptions[0];
+    const data = selected && eventPosters[selected.dataset.event];
+    if (!data) { preview.hidden = true; return; }
+    poster.src = data.src;
+    poster.alt = 'Plakat: ' + data.title;
+    name.textContent = data.title;
+    preview.hidden = false;
+  };
   const applyEvent = (id) => {
     if (!eventSelect) return;
     const match = Array.from(eventSelect.options).find(option => option.dataset.event === id);
     if (match) eventSelect.value = match.value;
+    updateEventPreview();
   };
+  if (eventSelect) eventSelect.addEventListener('change', updateEventPreview);
   applyEvent(new URLSearchParams(location.search).get('event'));
   $$('[data-event][href]').forEach(link => link.addEventListener('click', event => {
     const id = link.dataset.event;
