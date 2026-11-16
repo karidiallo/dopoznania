@@ -124,7 +124,7 @@
   function openPanel(key){
     const data = content[key]; if(!data)return;
     closeMenu();
-    panelContent.innerHTML = `<div class="eyebrow"><span class="eyebrow__line"></span> ${data.index}</div><h2 id="panelTitle">${data.title}</h2><p>${data.lead}</p><p class="fine">${data.body}</p>${data.facts.map(([a,b])=>`<div class="panel-fact"><span>${a}</span><b>${b}</b></div>`).join('')}<button class="action action--black panel-cta" id="panelCTA">${data.button} <span>↗</span></button>`;
+    panelContent.innerHTML = `<div class="eyebrow"><span class="eyebrow__line"></span> ${data.index}</div><h2 id="panelTitle">${data.title}</h2><p>${data.lead}</p><p class="fine">${data.body}</p>${data.facts.map(([a,b])=>`<div class="panel-fact"><span>${a}</span><b>${b}</b></div>`).join('')}<button class="action action--black panel-cta" id="panelCTA">${data.button} <span><svg class="dp-arrow dp-arrow--diagonal" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>`;
     $('#panelCTA').addEventListener('click',()=>content[data.go]?openPanel(data.go):scrollToChapter(data.go));
     panelBackdrop.classList.add('open');panelBackdrop.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
