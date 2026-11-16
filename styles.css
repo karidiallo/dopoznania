@@ -368,3 +368,11 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
   .site-footer .footer-bottom { gap: 8px; padding-top: 17px; font-size: 11px; line-height: 1.6; }
   .site-footer .footer-bottom a[href="https://www.sitewarrior.eu/"] { font-size: 11px !important; }
 }
+
+/* V13.4: identical vector arrows in Safari iOS, Chrome and desktop */
+.dp-arrow{display:inline-block;width:1.05em;height:1.05em;flex:0 0 auto;vertical-align:-.12em;overflow:visible;color:inherit;stroke:none;transform:none;line-height:1;}
+.chapter__link .dp-arrow,.header__cta .dp-arrow,.event-tile__info .dp-arrow,.submit-cta .dp-arrow{width:1.2em;height:1.2em;}
+.hero-film__play .dp-arrow{width:20px;height:20px;}
+.overlay nav a .dp-arrow{width:22px;height:22px;margin-left:auto;}
+.media-overlay .dp-arrow,.edition-card-bottom .dp-arrow{width:1.2em;height:1.2em;}
+@media(max-width:650px){.hero-film__play .dp-arrow{width:17px;height:17px}.overlay nav a .dp-arrow{width:18px;height:18px}}
