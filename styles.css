@@ -59,6 +59,11 @@ html{scroll-padding-top:0;scroll-behavior:smooth}
 .chapter__link{border:0;border-bottom:1px solid rgba(10,10,10,.7);background:transparent;padding:0 0 9px;font-size:12px;font-weight:700;letter-spacing:.01em;display:inline-flex;align-items:center;gap:37px;transition:gap .22s,opacity .22s;color:#111;cursor:pointer}
 .chapter__link:hover{gap:47px;opacity:.66}
 .chapter__link span{font-size:17px}
+.icon-arrow{width:15px;height:15px;display:inline-block;vertical-align:middle;flex:0 0 auto}
+.chapter__link .icon-arrow,.event-tile__info a .icon-arrow,.footer-bottom .icon-arrow,.submit-cta .icon-arrow,.thankyou .icon-arrow{width:15px;height:15px}
+.hero-film__play .icon-arrow{width:16px;height:16px}
+.overlay nav a .icon-arrow{width:17px;height:17px}
+.icon-arrow--solid{width:16px;height:16px}
 .chapter--idea .chapter__inner,.chapter--community .chapter__inner{display:flex;justify-content:flex-start}
 .chapter--workshops .chapter__inner,.chapter--archive .chapter__inner{display:flex;justify-content:flex-end}
 .chapter--destination .chapter__inner{display:flex;justify-content:flex-start}
@@ -203,7 +208,7 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 .hero-film:hover{transform:rotate(0deg) translateY(-7px)}
 .hero-film__visual{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:20px;background:#141414;box-shadow:0 22px 70px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.86)}
 .hero-film video{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1);pointer-events:none}
-.hero-film__play{position:absolute;bottom:15px;right:15px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);display:grid;place-items:center;font-size:19px}
+.hero-film__play{position:absolute;bottom:15px;right:15px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);display:grid;place-items:center;font-size:19px;color:#111}
 .hero-film__meta{display:flex;justify-content:space-between;gap:12px;padding:12px 4px 0;font-size:9px;font-weight:750;letter-spacing:.07em}
 .chapter--archive .journey-photo-cluster{z-index:2}
 .registration-event-preview{margin-top:23px;width:min(250px,100%);animation:posterReveal .35s ease both}
