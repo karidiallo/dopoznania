@@ -59,11 +59,6 @@ html{scroll-padding-top:0;scroll-behavior:smooth}
 .chapter__link{border:0;border-bottom:1px solid rgba(10,10,10,.7);background:transparent;padding:0 0 9px;font-size:12px;font-weight:700;letter-spacing:.01em;display:inline-flex;align-items:center;gap:37px;transition:gap .22s,opacity .22s;color:#111;cursor:pointer}
 .chapter__link:hover{gap:47px;opacity:.66}
 .chapter__link span{font-size:17px}
-.icon-arrow{width:15px;height:15px;display:inline-block;vertical-align:middle;flex:0 0 auto}
-.chapter__link .icon-arrow,.event-tile__info a .icon-arrow,.footer-bottom .icon-arrow,.submit-cta .icon-arrow,.thankyou .icon-arrow{width:15px;height:15px}
-.hero-film__play .icon-arrow{width:16px;height:16px}
-.overlay nav a .icon-arrow{width:17px;height:17px}
-.icon-arrow--solid{width:16px;height:16px}
 .chapter--idea .chapter__inner,.chapter--community .chapter__inner{display:flex;justify-content:flex-start}
 .chapter--workshops .chapter__inner,.chapter--archive .chapter__inner{display:flex;justify-content:flex-end}
 .chapter--destination .chapter__inner{display:flex;justify-content:flex-start}
@@ -208,7 +203,7 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 .hero-film:hover{transform:rotate(0deg) translateY(-7px)}
 .hero-film__visual{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:20px;background:#141414;box-shadow:0 22px 70px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.86)}
 .hero-film video{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1);pointer-events:none}
-.hero-film__play{position:absolute;bottom:15px;right:15px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);display:grid;place-items:center;font-size:19px;color:#111}
+.hero-film__play{position:absolute;bottom:15px;right:15px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);display:grid;place-items:center;font-size:19px}
 .hero-film__meta{display:flex;justify-content:space-between;gap:12px;padding:12px 4px 0;font-size:9px;font-weight:750;letter-spacing:.07em}
 .chapter--archive .journey-photo-cluster{z-index:2}
 .registration-event-preview{margin-top:23px;width:min(250px,100%);animation:posterReveal .35s ease both}
@@ -268,13 +263,77 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 @media(max-width:1100px){.chapter--workshops .events-intro #h-workshops{font-size:clamp(42px,6.2vw,68px)!important;}}
 @media(max-width:600px){.chapter--workshops .events-intro #h-workshops{font-size:clamp(42px,12vw,62px)!important;}}
 
-/* V15: distinct registration consent controls and mobile-safe title */
-.consent-group{display:flex;flex-direction:column;gap:18px;margin:7px 0 24px;padding:19px;border:1px solid rgba(255,255,255,.7);border-radius:18px;background:rgba(255,255,255,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.consent-group .consent{margin:0;align-items:flex-start;gap:13px}
-.consent-group .consent input{appearance:auto;accent-color:#151515;width:20px;height:20px;flex-shrink:0;margin:0;cursor:pointer}
-.consent-group .consent span{min-width:0;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
-.consent-group a{color:#111;text-decoration:underline;text-underline-offset:3px;font-weight:650}
-.consent-group small{font-weight:400;color:#555;font-size:12px}
-.consent-group .consent-hint{margin:0 0 0 33px;color:#595959;font-size:11px;line-height:1.55}
-.chapter--hero .chapter__card h1{font-size:clamp(32px,4.4vw,69px);letter-spacing:-.058em;line-height:1.04;white-space:normal;overflow-wrap:normal;word-break:normal}
-@media(max-width:650px){.chapter--hero .chapter__card h1{font-size:clamp(30px,7.2vw,48px);letter-spacing:-.065em}.consent-group{padding:16px 13px}.consent-group .consent span{font-size:12px}.consent-group .consent-hint{margin-left:32px}}
+/* V13.2 — mobile registration must determine its own document height.
+   The previous @media(max-width:540px) `.chapter { height:100svh }`
+   overwrote `.chapter--registration {height:auto}`, causing the form
+   to overflow into the footer. Keep the journey stages fullscreen, but
+   let the final registration chapter grow to fit all inputs. */
+.chapter.chapter--registration {
+  height: auto !important;
+  min-height: 100svh;
+  overflow: visible;
+  box-sizing: border-box;
+  align-items: stretch;
+  padding-bottom: clamp(84px, 12svh, 150px);
+}
+.chapter--registration .registration-layout {
+  height: auto;
+  min-height: 0;
+  align-items: center;
+  align-content: start;
+}
+.chapter--registration .registration-glass,
+.chapter--registration .registration-intro {
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+}
+.site-footer {
+  position: relative;
+  z-index: 3;
+  clear: both;
+}
+@media (max-width: 920px) {
+  .chapter.chapter--registration {
+    padding-top: 116px;
+    padding-bottom: 110px;
+  }
+  .chapter--registration .registration-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    width: min(100%, 680px);
+  }
+  .chapter--registration .registration-intro,
+  .chapter--registration .registration-glass {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .chapter.chapter--registration {
+    height: auto !important;
+    min-height: 100svh;
+    padding: 105px 22px 96px;
+  }
+  .chapter--registration .registration-layout {
+    gap: 20px;
+    margin: 0 auto;
+  }
+  .chapter--registration .registration-glass {
+    padding: 25px 20px;
+    border-radius: 20px !important;
+  }
+  .chapter--registration .registration-intro--glass {
+    padding: 26px 23px;
+  }
+  .chapter--registration .form-top {flex-wrap: wrap; row-gap: 10px;}
+  .chapter--registration .field input,
+  .chapter--registration .field textarea,
+  .chapter--registration .field select {
+    max-width: 100%;
+  }
+  .site-footer { margin-top: 0; }
+}
