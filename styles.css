@@ -267,3 +267,14 @@ footer .footer-brand .logo-art{display:block;width:100%;height:auto;object-fit:c
 .chapter--workshops .events-intro .chapter__body{max-width:100%;}
 @media(max-width:1100px){.chapter--workshops .events-intro #h-workshops{font-size:clamp(42px,6.2vw,68px)!important;}}
 @media(max-width:600px){.chapter--workshops .events-intro #h-workshops{font-size:clamp(42px,12vw,62px)!important;}}
+
+/* V15: distinct registration consent controls and mobile-safe title */
+.consent-group{display:flex;flex-direction:column;gap:18px;margin:7px 0 24px;padding:19px;border:1px solid rgba(255,255,255,.7);border-radius:18px;background:rgba(255,255,255,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.consent-group .consent{margin:0;align-items:flex-start;gap:13px}
+.consent-group .consent input{appearance:auto;accent-color:#151515;width:20px;height:20px;flex-shrink:0;margin:0;cursor:pointer}
+.consent-group .consent span{min-width:0;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+.consent-group a{color:#111;text-decoration:underline;text-underline-offset:3px;font-weight:650}
+.consent-group small{font-weight:400;color:#555;font-size:12px}
+.consent-group .consent-hint{margin:0 0 0 33px;color:#595959;font-size:11px;line-height:1.55}
+.chapter--hero .chapter__card h1{font-size:clamp(32px,4.4vw,69px);letter-spacing:-.058em;line-height:1.04;white-space:normal;overflow-wrap:normal;word-break:normal}
+@media(max-width:650px){.chapter--hero .chapter__card h1{font-size:clamp(30px,7.2vw,48px);letter-spacing:-.065em}.consent-group{padding:16px 13px}.consent-group .consent span{font-size:12px}.consent-group .consent-hint{margin-left:32px}}
